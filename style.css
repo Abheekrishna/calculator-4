@@ -10,6 +10,7 @@
     --current-display-color: #727272;
     --footer-color: #727272;
     --darkmode-icon-color: #727272;
+    --previous-color: #d7d7d7;
 }
 
 .darkmode {
@@ -20,7 +21,8 @@
     --calculator-button-hover-color: #4c4c4c;
     --calculator-button-color: #ffffff;
     --current-display-color: #ffffff;
-    --footer-color: #ffffff;
+    --footer-color: #ececec;
+    --previous-color: #797979;
     --darkmode-icon-color: #ffffff;
 }
 
@@ -75,12 +77,12 @@ body {
     color: var(--current-display-color);
 }
 .previous {
-    opacity: 0.3;
+    color: var(--previous-color);
     margin-right: 15px;
 }
 .calculator > button {
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--calculator-button-color);
     background-color: var(--calculator-button-background-color);
     cursor: pointer;
@@ -103,7 +105,7 @@ footer {
     margin-top: 50px;
 }
 .fa-github {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 .fa-github:hover {
     transform: rotateY(360deg) rotateY(360deg) scale(1.5);
@@ -116,7 +118,8 @@ footer {
 
 #darkmode {
     color: var(--darkmode-icon-color);
-    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 #darkmode:hover {
     transform: rotateY(360deg) rotateY(360deg) scale(1.5);
