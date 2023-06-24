@@ -47,3 +47,40 @@ numberBtn.forEach(number => {
         currentNumberTextDiv.innerText = currentNumber;
     })
 })
+
+operationBtn.forEach(operation => {
+    operation.addEventListener('click', (e) => {
+        const operationName = e.target.innerText;
+        if(!currentNumber) return;
+        haveDot = true;
+        if(currentNumber && lastOperation && previousNumber) {
+            mathOperations();
+        } else {
+            result = parseFloat(currentNumber);
+        }
+
+        lastOperation = operationName;
+        clear(lastOperation);
+    })
+})
+
+const clear = (name = '') => {
+    previousNumber = `${currentNumber} ${name}`;
+    previousNumberTextDiv.innerText = previousNumber;
+    currentNumber = '';
+    currentNumberTextDiv.innerText = '';
+}
+
+
+const mathOperations = () => {
+    if(lastOperation === ' ÷') {
+        result = parseFloat(result) / parseFloat(currentNumber);
+    } else if(lastOperation === 'x') {
+        result = parseFloat(result) * parseFloat(currentNumber);
+    } else if (lastOperation === '-') {
+        result = parseFloat(result) - parseFloat(currentNumber);
+    } else if (lastOperation === '+') {
+        result = parseFloat(result) + parseFloat(currentNumber);
+    }
+}
+
