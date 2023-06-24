@@ -8,21 +8,21 @@ const deleteBtn = document.querySelector('[data-delete]');
 const year = document.getElementById('year');
 const darkmodeToggle = document.getElementById('darkmode');
 
-let darkmode = localStorage.getItem('darkmode')
+let darkmode = localStorage.getItem("darkmode")
 
 const enableDarkMode = () => {
-    document.body.classList.add('darkmode');
-    localStorage.setItem('darkmode', 'enabled');
+    document.body.classList.add("lightmode");
+    localStorage.setItem("darkmode", "enabled");
 } 
 
 const disableDarkMode = () => {
-    document.body.classList.remove('darkmode');
-    localStorage.setItem('darkmode', null);
+    document.body.classList.remove("lightmode");
+    localStorage.setItem("darkmode", null);
 }
 
 darkmodeToggle.addEventListener('click', () => {
-    let darkmode = localStorage.getItem('darkmode')
-    if(darkmode !== 'enabled') {
+    let darkmode = localStorage.getItem("darkmode")
+    if(darkmode !== "enabled") {
         enableDarkMode();
     } else {
         disableDarkMode();
@@ -38,6 +38,12 @@ let lastOperation = '';
 
 numberBtn.forEach(number => {
     number.addEventListener('click', (e) => {
-        console.log(e.target.innerText)
+        if(e.target.innerText === '.' && !haveDot) {
+            haveDot = true;
+        } else if (e.target.innerText === '.' && haveDot) {
+            return;
+        }
+        currentNumber += e.target.innerText;
+        currentNumberTextDiv.innerText = currentNumber;
     })
 })
