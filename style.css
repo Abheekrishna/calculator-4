@@ -99,6 +99,12 @@ footer {
     text-align: center;
     margin-top: 50px;
 }
+.fa-github {
+    transition: all 0.3s ease-in-out;
+}
+.fa-github:hover {
+    transform: rotateY(360deg) rotateY(360deg) scale(1.5);
+}
 .darkmodeIcon {
     text-align: right;
     margin-top: 20px;
