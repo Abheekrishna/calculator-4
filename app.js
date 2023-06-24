@@ -60,6 +60,7 @@ operationBtn.forEach(operation => {
         }
 
         lastOperation = operationName;
+        haveDot = false;
         clear(lastOperation);
     })
 })
@@ -69,6 +70,7 @@ const clear = (name = '') => {
     previousNumberTextDiv.innerText = previousNumber;
     currentNumber = '';
     currentNumberTextDiv.innerText = '';
+    previousNumber = ''
 }
 
 
@@ -84,3 +86,22 @@ const mathOperations = () => {
     }
 }
 
+equalsBtn.addEventListener('click', () => {
+    mathOperations();
+    clear(lastOperation);
+    currentNumberTextDiv.innerText = result;
+})
+
+allClearBtn.addEventListener('click', () => {
+    currentNumber = '';
+    currentNumberTextDiv.innerText = '';
+    previousNumber = '';
+    previousNumberTextDiv.innerText = '';
+    lastOperation = '';
+    result = null;
+})
+
+deleteBtn.addEventListener('click', () => {
+    currentNumber = currentNumber.toString().slice(0, -1);
+    currentNumberTextDiv.innerText = currentNumber;
+})
