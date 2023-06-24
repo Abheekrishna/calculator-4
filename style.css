@@ -110,5 +110,5 @@ footer {
     transition: all 0.4s ease-in-out;
 }
 #darkmode:hover {
-    transform: rotateY(360deg) scale(1.5);
+    transform: rotateY(360deg) rotateY(360deg) scale(1.5);
 }
