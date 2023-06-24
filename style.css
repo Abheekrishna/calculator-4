@@ -107,4 +107,8 @@ footer {
 
 #darkmode {
     color: var(--darkmode-icon-color);
+    transition: all 0.4s ease-in-out;
+}
+#darkmode:hover {
+    transform: rotateY(360deg) scale(1.5);
 }
