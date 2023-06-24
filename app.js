@@ -105,3 +105,6 @@ deleteBtn.addEventListener('click', () => {
     currentNumber = currentNumber.toString().slice(0, -1);
     currentNumberTextDiv.innerText = currentNumber;
 })
+
+const newYear = (new Date()).getFullYear();
+year.innerText = newYear;
